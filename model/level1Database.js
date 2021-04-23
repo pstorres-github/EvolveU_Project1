@@ -41,7 +41,7 @@ const level1Database = [
     },
     {
         stepNum: "4",
-        image: "./img/darkjungle.jpg",
+        image: "./img/darkvalley.jpg",
         message:   `You realize too late that the dark valley is a terrible and impossible route.  You get lost and
                     circle around for days and days.  You eventually meet your untimely demise.`,
         choice1: "Restart Game",
@@ -68,7 +68,7 @@ const level1Database = [
     {
         stepNum: "6",
         image: "./img/volcano.jpg",
-        message:   `You battle the jaguar.  It's a tough fight, but you make it out alive!  You keep going
+        message:   `You battle the jaguar, and make it out alive!  You keep going
                     and reach a huge volcano.  You find an old lava tube and crawl inside.  You find a locked
                     treasure chest.  Beside it is a scroll with a riddle scribbled on it:  "A merchant can place 8 large boxes or 10 small boxes into a carton for shipping. 
                     In one shipment, he sent a total of 96 boxes. If there are more large boxes than small boxes,
@@ -97,9 +97,8 @@ const level1Database = [
         stepNum: "8",
         image: "./img/treasure.jpg",
         message:  `CHAPTER 1 COMPLETE:  A key magically appears.  You open the treasure chest, and discover that it is filled with
-                    ancient treasure and jewels.  You joyfully make your way back to the pirate ship,
-                    and enjoy the treasure!  However, you fail to realise the treasure is cursed and the island will not let
-                    you get away that easily....`,
+                    ancient treasure and jewels.  You do a joyful pirate dance, and pick up the treasure.  You start
+                    heading back to the ship, but you begin to realise that finding the treasure is not the end of your adventure.`,
         choice1: "Go to Chapter 2",
         choice1StepNum: "Level Up",
         choice2: "No thanks, I'm done",

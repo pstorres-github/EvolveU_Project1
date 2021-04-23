@@ -2,8 +2,9 @@ const level2Database = [
     {
         stepNum: "1",
         image: "./img/darkjungle.jpg", 
-        message: `In your excitement, you forget to take your map as you leave the lava tube with your treasure.
-                  Uncertain which direcion to go, you end up at the edge of the dark jungle.  You slowly enter, and start to 
+        message: `In your excitement, you discover that you have forgotten your map in the lava tube.  
+                  You set off to retreive the map, but mistakenly take a different route.
+                  You enter a foreboding forest, and start to 
                   hear voices calling you in every direction.  You start to run and approach an ominous bridge.
                   Do you take your chances and cross the bridge, or try and find another way?`,
         choice1: "Cross the bridge",
