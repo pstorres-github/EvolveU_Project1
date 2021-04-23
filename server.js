@@ -2,6 +2,7 @@ const express = require ('express')  // imports express module into server.js fi
 const app = express()  // create app object, to run express.  express app object
 const level1Routes = require ('./routes/level1Routes')
 const level2Routes = require ('./routes/level2Routes')
+const level3Routes = require ('./routes/level3Routes')
 const playersRoutes = require ('./routes/playersRoutes')
 
 const router = express.Router()
@@ -21,6 +22,8 @@ app.use(express.json())
 app.use('/', level1Routes)
 
 app.use('/', level2Routes)
+
+app.use('/', level3Routes)
 
 app.use('/', playersRoutes)
 

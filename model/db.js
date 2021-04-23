@@ -4,7 +4,6 @@ const dbUrl = 'mongodb://localhost:27017'
 const databaseName = 'pirateGame'
 
 let connectMongoClient = MongoClient.connect(dbUrl, { useUnifiedTopology: true })
-    
 
 let getDb = connectMongoClient.then((client) => {
     return client.db(databaseName)

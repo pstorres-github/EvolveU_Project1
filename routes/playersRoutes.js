@@ -39,8 +39,11 @@ router.get('/player/findByName/:name', async (request, response) => {
     const { name } = request.params;
     let querystring = name
     let founditem = await findPlayer(querystring)
-    
-   response.send(founditem)
+    // if item is not found, returns NULL.  Send a response of null in a JSON friendly way.
+    if (!founditem) 
+        response.send ({name: null})
+    else 
+        response.send(founditem)
     console.log("FOUND ITEM", founditem)
     return founditem
 })
@@ -56,15 +59,11 @@ router.put('/player/updateScore/:id/:score', async (request, response) => {
 
     let collection = await getPlayersCollection()
     
-    let findPlayer = await collection.findAndModify({"_id": ObjectId(id)}, [['_id','asc']],{$set:{"highScore":scoreAsNumber}},{}, function (err,object) {
-        if (err) {
-            console.warn(err.message);
-        } else {
-            console.dir (object)
-        }
-    })
-    response.send ("High Score update")
-    return findPlayer
+    let player = await collection.findOneAndUpdate({"_id": ObjectId(id)}, {$set:{"highScore":scoreAsNumber}})
+    
+    console.log('player high score updated')
+    response.send (player)
+    return player
 })
 
 router.put('/player/updateProgress/:id/:score/:level/:step', async (request, response) => {
@@ -77,16 +76,15 @@ router.put('/player/updateProgress/:id/:score/:level/:step', async (request, res
     let scoreAsNumber = Number(score,10)
 
     let collection = await getPlayersCollection()
+    /*
+    let updatedPlayer= await collection.findOneAndUpdate({"_id": ObjectId(id)}, [['_id','asc']],{$set:{"score":scoreAsNumber, "level":level, "step":step}},{}, function (err,object) {
+                                                        if (err) {console.warn(err.message)} else {console.dir (object)} }) 
+    */
+    let updatedPlayer= await collection.findOneAndUpdate({"_id": ObjectId(id)}, {$set:{"score":scoreAsNumber, "level":level, "step":step}}) 
     
-    let findPlayer = await collection.findAndModify({"_id": ObjectId(id)}, [['_id','asc']],{$set:{"score":scoreAsNumber, "level":level, "step":step}},{}, function (err,object) {
-        if (err) {
-            console.warn(err.message);
-        } else {
-            console.dir (object)
-        }
-    })
-    response.send ("Data stored in user profile")
-    return findPlayer
+    console.log('player progress updated', updatedPlayer)
+    response.send (updatedPlayer)
+    return updatedPlayer
 })
 
 /*  ----- POST ------ */
@@ -94,9 +92,10 @@ router.put('/player/updateProgress/:id/:score/:level/:step', async (request, res
 router.post('/player/create/:name', async (request, response) => {
     let { name } = request.params
     let collection = await getPlayersCollection()
-    let insertedplayer = await collection.insertOne ({"name":name, "level":1, "step":1, "score":0, "highScore":0})
-    response.send (`${name} was added to list`)
-    return insertedplayer.ops[0].id
+    let insertedPlayer = await collection.insertOne ({"name":name, "level":1, "step":1, "score":0, "highScore":0})
+    console.log (`${name} was added to list`)
+    response.send (insertedPlayer)
+    return insertedPlayer.ops[0].id
 })
 
 
