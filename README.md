@@ -1,15 +1,10 @@
 #  EvolveU_Project1: "The Cursed Treasure of Volcano Island"
 This is a choose your own adventure style pirate game, designed to replicate the experience of reading the "Choose your own adventure book" series novels in a more graphical way.
 
-## Table of contents
-* [General info] (##General info)
-* [Technologies] (##Technologies)
-* [Setup] (##Setup)
-
-##General info
+## General info
 This proect was developed to demonstrate the use of APIs, the interactions between the front-end client and server, and the retrieval of information from a remote database (instead of data stored locally within user program).
 
-##Technologies
+## Technologies
 This project is created to explore and use the following technologies and concepts:<br />
 REST APIs, POSTMAN <br />
 Importing NPM Modules <br />
@@ -19,7 +14,7 @@ MongoDB <br />
 HTML, CSS <br />
 Credit:  Pictures for this project are sourced from unsplash.com <br />
 
-##Setup
+## Setup
 To run, you need to populate a local Mongo DB database with the model files.  This can be done by either: <br />
   a.) typing "node populateMongoDB.js" at the command line.  This will run a script to populate the database (root database should be called pirateGame).  This only needs to be done at the beginning to install the intial version of the database. <br />
   or <br />
