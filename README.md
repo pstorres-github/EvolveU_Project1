@@ -1,5 +1,5 @@
 #  EvolveU_Project1: "The Cursed Treasure of Volcano Island"
-This is a choose your own adventure style pirate game, designed to replicate the experience of reading the "Choose your own adventure book" series novels in a more graphical way.
+This is a choose your own adventure style pirate game, designed to replicate the experience of reading the "Choose your own adventure book" series novels (https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure) in a more graphical way.
 
 ## General info
 This proect was developed to demonstrate the use of APIs, the interactions between the front-end client and server, and the retrieval of information from a remote database (instead of data stored locally within user program).
